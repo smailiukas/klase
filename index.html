@@ -36,7 +36,7 @@
     // Function to fetch the screenshot from the API and display it
     async function fetchScreenshot() {
       try {
-        const response = await fetch('http://185.80.130.212:3000/api/fetchSheet', { mode:  'no-cors' });
+        const response = await fetch('http://185.80.130.212:3000/api/fetchSheet');
         
         if (!response.ok) {
           throw new Error('Failed to fetch screenshot (API)');

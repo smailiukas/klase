@@ -42,10 +42,16 @@
           throw new Error('Failed to fetch screenshot (API)');
         }
 
-        // Set the image src to the API URL
-        const screenshotImg = document.getElementById('screenshot');
-        screenshotImg.src = 'http://185.80.130.212:3000/api/fetchSheet';
-        screenshotImg.style.display = 'block';  // Show the image
+       // Convert the response to a blob (binary large object)
+       const blob = await response.blob();
+
+// Create an object URL for the image
+const imageUrl = URL.createObjectURL(blob);
+
+// Set the image URL to the src of the img tag
+const screenshotImg = document.getElementById('screenshot');
+screenshotImg.src = imageUrl;
+screenshotImg.style.display = 'block';  // Show the image
       } catch (error) {
         console.error('Error fetching screenshot:', error);
         alert('Failed to fetch screenshot');

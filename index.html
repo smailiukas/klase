@@ -39,7 +39,7 @@
         const response = await fetch('http://185.80.130.212:3000/api/fetchSheet', { mode:  'no-cors' });
         
         if (!response.ok) {
-          throw new Error('Failed to fetch screenshot');
+          throw new Error('Failed to fetch screenshot (API)');
         }
 
         // Set the image src to the API URL
